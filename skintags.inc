@@ -490,10 +490,7 @@ stock GetSkinGender(skinid) {
 
 stock GetSkinGenderName(skinid, output[], outlen = sizeof(output)) {
     output[0] = '\0';
-    if (GetSkinGender(skinid))
-        strcat(output, "male", outlen);
-    else
-        strcat(output, "female", outlen);
+    strcat(output, GetSkinGender(skinid) ? ("male") : ("female"), outlen);
 }
 
 stock GetSkinRace(skinid) {
