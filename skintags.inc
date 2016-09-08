@@ -13,6 +13,7 @@
 |                                                                         |
 |     - GetSkinName(skinid, output[], outlen = sizeof(output))            |
 |     - GetSkinModelName(skinid, output[], outlen = sizeof(output))       |
+|     - GetSkinSex(skinid)                                                |
 |     - GetSkinGender(skinid)                                             |
 |     - GetSkinGenderName(skinid, output[], outlen = sizeof(output))      |
 |     - GetSkinRace(skinid)                                               |
@@ -22,6 +23,8 @@
 |     - GetSkinService(skinid)                                            |
 |     - GetSkinServiceName(skinid, output[], outlen = sizeof(output))     |
 |     - GetSkinType(skinid)                                               |
+|     - IsPlayerMale(playerid)                                            |
+|     - IsPlayerFemale(playerid)                                          |
 | _______________________________________________________________________ |
 |                                                                         |
 |     Definitions:                                                        |
@@ -477,6 +480,9 @@ stock GetSkinName(skinid, output[], outlen = sizeof(output)) {
 stock GetSkinModelName(skinid, output[], outlen = sizeof(output)) {
     format(output, outlen, "%s", SkinInfoList[skinid][e_SKIN_MODEL_NAME]);
 }
+
+#define IsPlayerFemale !IsPlayerMale
+#define IsPlayerMale(%0) (GetSkinGender(GetPlayerSkin(%0)) == SKIN_GENDER_MALE)
 
 #define GetPlayerSex GetSkinGender
 stock GetSkinGender(skinid) {
