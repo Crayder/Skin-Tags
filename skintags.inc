@@ -109,8 +109,7 @@
 #define SKIN_SERVICE_FIRE       (0b00000000000000000000010000000000)
 #define SKIN_SERVICE_MEDIC      (0b00000000000000000000100000000000)
 
-// https://wiki.sa-mp.com/wiki/Skins
-#define SKIN_FLAG_TYPE          (0b00000000000000001111111111111000) // Col 56
+#define SKIN_FLAG_TYPE          (0b00000000000000001111111111111000)
 #define SKIN_TYPE_OTHER         (0b00000000000000000000000000000000)
 #define SKIN_TYPE_BEACH         (0b00000000000000000001000000000000)
 #define SKIN_TYPE_FARMER        (0b00000000000000000010000000000000)
@@ -138,7 +137,7 @@ static s_GangNames[][24] = {
     "Bikers",               // SKIN_GANG_BIKER  
     "The Russian Mafia",    // SKIN_GANG_RUSSIAN
     "The Italian Mafia"     // SKIN_GANG_ITALIAN
-}
+};
 
 static s_ServiceNames[][24] = {
     "Policeman",            // SKIN_SERVICE_POLICE 
@@ -149,7 +148,7 @@ static s_ServiceNames[][24] = {
     "Army",                 // SKIN_SERVICE_ARMY   
     "Fireman",              // SKIN_SERVICE_FIRE   
     "Paramedic",            // SKIN_SERVICE_MEDIC
-}
+};
 
 enum e_SKIN_INFO {
     e_SKIN_MODEL_NAME[32],
