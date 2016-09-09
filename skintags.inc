@@ -474,30 +474,54 @@ static const SkinInfoList[][e_SKIN_INFO] = {
 };
 
 stock GetSkinName(skinid, output[], outlen = sizeof(output)) {
+    if(0 > skinid > 311)
+        return 0;
+    
     strunpack(output, SkinInfoList[skinid][e_SKIN_NAME], outlen);
+    
+    return 1;
 }
 
 stock GetSkinModelName(skinid, output[], outlen = sizeof(output)) {
+    if(0 > skinid > 311)
+        return 0;
+    
     strunpack(output, SkinInfoList[skinid][e_SKIN_MODEL_NAME], outlen);
+    
+    return 1;
 }
 
 #define IsPlayerFemale !IsPlayerMale
 #define IsPlayerMale(%0) (GetSkinGender(GetPlayerSkin(%0)) == SKIN_GENDER_MALE)
-
+#define GetSkinSex GetSkinGender
 stock GetSkinGender(skinid) {
+    if(0 > skinid > 311)
+        return -1;
+    
     return (SkinInfoList[skinid][e_SKIN_FLAGS] & SKIN_FLAG_GENDER);
 }
 
 stock GetSkinGenderName(skinid, output[], outlen = sizeof(output)) {
+    if(0 > skinid > 311)
+        return 0;
+    
     output[0] = '\0';
     strcat(output, GetSkinGender(skinid) ? ("male") : ("female"), outlen);
+    
+    return 1;
 }
 
 stock GetSkinRace(skinid) {
+    if(0 > skinid > 311)
+        return -1;
+    
     return ((SkinInfoList[skinid][e_SKIN_FLAGS] & SKIN_FLAG_RACE));
 }
 
 stock GetSkinRaceName(skinid, output[], outlen = sizeof(output)) {
+    if(0 > skinid > 311)
+        return 0;
+    
     output[0] = '\0';
     switch(GetSkinRace(skinid) >> 1) {
         case SKIN_RACE_WHITE:
@@ -509,25 +533,46 @@ stock GetSkinRaceName(skinid, output[], outlen = sizeof(output)) {
         case SKIN_RACE_LATIN:
             strcat(output, "latino", outlen);
     }
+    
+    return 1;
 }
 
 stock GetSkinGang(skinid) {
+    if(0 > skinid > 311)
+        return -1;
+    
     return ((SkinInfoList[skinid][e_SKIN_FLAGS] & SKIN_FLAG_GANG));
 }
 
 stock GetSkinGangName(skinid, output[], outlen = sizeof(output)) {
+    if(0 > skinid > 311)
+        return 0;
+    
     strunpack(output, s_GangNames[GetSkinGang(skinid) >> 3], outlen);
+    
+    return 1;
 }
 
 stock GetSkinService(skinid) {
+    if(0 > skinid > 311)
+        return -1;
+    
     return ((SkinInfoList[skinid][e_SKIN_FLAGS] & SKIN_FLAG_SERVICE));
 }
 
 stock GetSkinServiceName(skinid, output[], outlen = sizeof(output)) {
+    if(0 > skinid > 311)
+        return 0;
+    
     strunpack(output, s_ServiceNames[GetSkinService(skinid) >> 7], outlen);
+    
+    return 1;
 }
 
 stock GetSkinType(skinid) {
+    if(0 > skinid > 311)
+        return -1;
+    
     new type = SkinInfoList[skinid][e_SKIN_FLAGS] & SKIN_FLAG_TYPE;
 
     if(type & SKIN_SERVICE_LAW)
