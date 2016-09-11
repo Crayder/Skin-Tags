@@ -36,6 +36,7 @@
 |     - Float:GetSkinDefence(skinid)                                      |
 |     - IsPlayerMale(playerid)                                            |
 |     - IsPlayerFemale(playerid)                                          |
+|     - IsValidSkin(skinid)                                               |
 | _______________________________________________________________________ |
 |                                                                         |
 |     Definitions:                                                        |
@@ -143,6 +144,9 @@
 |     - SKIN_ANIM_WOMAN                                                   |
 | _______________________________________________________________________ |
 \*                                                                       */
+
+#define IsValidSkin(%0) \
+    (%0 != 74 && (0 <= %0 <= 311))
 
 #define SKIN_FLAG_GENDER        (0b00000000000000000000000000000001)
 #define SKIN_GENDER_FEMALE      (0b00000000000000000000000000000000)
@@ -663,7 +667,7 @@ static const skinInfoList[][e_SKIN_INFO] = {
 };
 
 stock GetSkinName(skinid, output[], outlen = sizeof(output)) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return 0;
     
     strunpack(output, skinInfoList[skinid][e_SKIN_NAME], outlen);
@@ -672,7 +676,7 @@ stock GetSkinName(skinid, output[], outlen = sizeof(output)) {
 }
 
 stock GetSkinModelName(skinid, output[], outlen = sizeof(output)) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return 0;
     
     strunpack(output, skinInfoList[skinid][e_SKIN_MODEL_NAME], outlen);
@@ -684,14 +688,14 @@ stock GetSkinModelName(skinid, output[], outlen = sizeof(output)) {
 #define IsPlayerMale(%0) (GetSkinGender(GetPlayerSkin(%0)) == SKIN_GENDER_MALE)
 #define GetSkinSex GetSkinGender
 stock GetSkinGender(skinid) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return -1;
     
     return (skinInfoList[skinid][e_SKIN_FLAGS] & SKIN_FLAG_GENDER);
 }
 
 stock GetSkinGenderName(skinid, output[], outlen = sizeof(output)) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return 0;
     
     output[0] = '\0';
@@ -701,14 +705,14 @@ stock GetSkinGenderName(skinid, output[], outlen = sizeof(output)) {
 }
 
 stock GetSkinRace(skinid) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return -1;
     
     return ((skinInfoList[skinid][e_SKIN_FLAGS] & SKIN_FLAG_RACE));
 }
 
 stock GetSkinRaceName(skinid, output[], outlen = sizeof(output)) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return 0;
     
     output[0] = '\0';
@@ -727,14 +731,14 @@ stock GetSkinRaceName(skinid, output[], outlen = sizeof(output)) {
 }
 
 stock GetSkinGang(skinid) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return -1;
     
     return ((skinInfoList[skinid][e_SKIN_FLAGS] & SKIN_FLAG_GANG));
 }
 
 stock GetSkinGangName(skinid, output[], outlen = sizeof(output)) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return 0;
     
     strunpack(output, s_GangNames[GetSkinGang(skinid) >> 3], outlen);
@@ -743,14 +747,14 @@ stock GetSkinGangName(skinid, output[], outlen = sizeof(output)) {
 }
 
 stock GetSkinService(skinid) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return -1;
     
     return ((skinInfoList[skinid][e_SKIN_FLAGS] & SKIN_FLAG_SERVICE));
 }
 
 stock GetSkinServiceName(skinid, output[], outlen = sizeof(output)) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return 0;
     
     strunpack(output, s_ServiceNames[GetSkinService(skinid) >> 7], outlen);
@@ -759,7 +763,7 @@ stock GetSkinServiceName(skinid, output[], outlen = sizeof(output)) {
 }
 
 stock GetSkinType(skinid) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return -1;
     
     new type = skinInfoList[skinid][e_SKIN_FLAGS] & SKIN_FLAG_TYPE;
@@ -777,14 +781,14 @@ stock GetSkinType(skinid) {
 }
 
 stock GetSkinAnimGroup(skinid) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return -1;
     
     return skinInfoList[skinid][e_SKIN_ANIMGRP];
 }
 
 stock GetSkinAnimGroupName(skinid, output[], outlen = sizeof(output)) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return 0;
     
     strunpack(output, s_AnimGroupNames[skinInfoList[skinid][e_SKIN_ANIMGRP]], outlen);
@@ -793,14 +797,14 @@ stock GetSkinAnimGroupName(skinid, output[], outlen = sizeof(output)) {
 }
 
 stock GetSkinGroup(skinid) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return -1;
     
     return skinInfoList[skinid][e_SKIN_PEDGRP];
 }
 
 stock GetSkinGroupName(skinid, output[], outlen = sizeof(output)) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return 0;
     
     strunpack(output, pedGroups[skinInfoList[skinid][e_SKIN_PEDGRP]][e_GRP_NAME], outlen);
@@ -809,21 +813,21 @@ stock GetSkinGroupName(skinid, output[], outlen = sizeof(output)) {
 }
 
 stock GetSkinFear(skinid) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return -1;
     
     return pedGroups[skinInfoList[skinid][e_SKIN_PEDGRP]][e_FEAR];
 }
 
 stock GetSkinTemper(skinid) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return -1;
     
     return pedGroups[skinInfoList[skinid][e_SKIN_PEDGRP]][e_TEMPER];
 }
 
 stock GetSkinLawfullness(skinid) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return -1;
     
     return pedGroups[skinInfoList[skinid][e_SKIN_PEDGRP]][e_LAWFUL];
@@ -831,28 +835,28 @@ stock GetSkinLawfullness(skinid) {
 
 #define GetSkinSexAppeal GetSkinAppeal
 stock GetSkinAppeal(skinid) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return -1;
     
     return pedGroups[skinInfoList[skinid][e_SKIN_PEDGRP]][e_APPEAL];
 }
 
 stock GetSkinFOF(skinid) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return -1;
     
     return pedGroups[skinInfoList[skinid][e_SKIN_PEDGRP]][e_FOF];
 }
 
 stock Float:GetSkinStrength(skinid) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return -1.0;
     
     return pedGroups[skinInfoList[skinid][e_SKIN_PEDGRP]][e_STRENGTH];
 }
 
 stock Float:GetSkinDefence(skinid) {
-    if(0 > skinid > 311 && skinid != 74)
+    if(!IsValidSkin(skinid))
         return -1.0;
     
     return pedGroups[skinInfoList[skinid][e_SKIN_PEDGRP]][e_DEFENCE];
