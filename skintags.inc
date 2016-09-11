@@ -5,7 +5,7 @@
 |                                                                         |
 |     Author: Crayder                                                     |
 |     Date: 9/7/2016                                                      |
-|     Version: 2.00                                                      |
+|     Version: 2.00                                                       |
 | _______________________________________________________________________ |
 |                                                                         |
 |     Functions:                                                          |
@@ -36,7 +36,6 @@
 |     - Float:GetSkinDefence(skinid)                                      |
 |     - IsPlayerMale(playerid)                                            |
 |     - IsPlayerFemale(playerid)                                          |
-|     - IsValidSkin(skinid)                                               |
 | _______________________________________________________________________ |
 |                                                                         |
 |     Definitions:                                                        |
@@ -148,99 +147,57 @@
 #define IsValidSkin(%0) \
     (%0 != 74 && (0 <= %0 <= 311))
 
-#define SKIN_FLAG_GENDER        (0b00000000000000000000000000000001)
-#define SKIN_GENDER_FEMALE      (0b00000000000000000000000000000000)
-#define SKIN_GENDER_MALE        (0b00000000000000000000000000000001)
+#define SKIN_FLAG_GENDER         (0b00000000000000000000000000000001)
+#define SKIN_GENDER_FEMALE       (0b00000000000000000000000000000000)
+#define SKIN_GENDER_MALE         (0b00000000000000000000000000000001)
 
-#define SKIN_FLAG_RACE          (0b00000000000000000000000000000110)
-#define SKIN_RACE_WHITE         (0b00000000000000000000000000000000)
-#define SKIN_RACE_BLACK         (0b00000000000000000000000000000010)
-#define SKIN_RACE_ASIAN         (0b00000000000000000000000000000100)
-#define SKIN_RACE_LATIN         (0b00000000000000000000000000000110)
+#define SKIN_FLAG_RACE           (0b00000000000000000000000000000110)
+#define SKIN_RACE_WHITE          (0b00000000000000000000000000000000)
+#define SKIN_RACE_BLACK          (0b00000000000000000000000000000010)
+#define SKIN_RACE_ASIAN          (0b00000000000000000000000000000100)
+#define SKIN_RACE_LATIN          (0b00000000000000000000000000000110)
 
-#define SKIN_FLAG_GANG          (0b00000000000000000000000001111000)
-#define SKIN_GANG_NONE          (0b00000000000000000000000000000000)
-#define SKIN_GANG_GROVE         (0b00000000000000000000000000001000)
-#define SKIN_GANG_BALLA         (0b00000000000000000000000000010000)
-#define SKIN_GANG_AZTECA        (0b00000000000000000000000000011000)
-#define SKIN_GANG_VAGO          (0b00000000000000000000000000100000)
-#define SKIN_GANG_DANANG        (0b00000000000000000000000000101000)
-#define SKIN_GANG_RIFA          (0b00000000000000000000000000110000)
-#define SKIN_GANG_TRIAD         (0b00000000000000000000000000111000)
-#define SKIN_GANG_BIKER         (0b00000000000000000000000001000000)
-#define SKIN_GANG_RUSSIAN       (0b00000000000000000000000001001000)
-#define SKIN_GANG_ITALIAN       (0b00000000000000000000000001010000)
+#define SKIN_FLAG_GANG           (0b00000000000000000000000001111000)
+#define SKIN_GANG_NONE           (0b00000000000000000000000000000000)
+#define SKIN_GANG_GROVE          (0b00000000000000000000000000001000)
+#define SKIN_GANG_BALLA          (0b00000000000000000000000000010000)
+#define SKIN_GANG_AZTECA         (0b00000000000000000000000000011000)
+#define SKIN_GANG_VAGO           (0b00000000000000000000000000100000)
+#define SKIN_GANG_DANANG         (0b00000000000000000000000000101000)
+#define SKIN_GANG_RIFA           (0b00000000000000000000000000110000)
+#define SKIN_GANG_TRIAD          (0b00000000000000000000000000111000)
+#define SKIN_GANG_BIKER          (0b00000000000000000000000001000000)
+#define SKIN_GANG_RUSSIAN        (0b00000000000000000000000001001000)
+#define SKIN_GANG_ITALIAN        (0b00000000000000000000000001010000)
 
-#define SKIN_FLAG_SERVICE       (0b00000000000000000000111110000000)
-#define SKIN_SERVICE_NONE       (0b00000000000000000000000000000000)
-#define SKIN_SERVICE_LAW        (0b00000000000000000000001110000000)
-#define SKIN_SERVICE_POLICE     (0b00000000000000000000000010000000)
-#define SKIN_SERVICE_MIB        (0b00000000000000000000000100000000)
-#define SKIN_SERVICE_SHERIFF    (0b00000000000000000000000110000000)
-#define SKIN_SERVICE_SWAT       (0b00000000000000000000001000000000)
-#define SKIN_SERVICE_FBI        (0b00000000000000000000001010000000)
-#define SKIN_SERVICE_ARMY       (0b00000000000000000000001110000000)
-#define SKIN_SERVICE_FIRE       (0b00000000000000000000010000000000)
-#define SKIN_SERVICE_MEDIC      (0b00000000000000000000100000000000)
+#define SKIN_FLAG_SERVICE        (0b00000000000000000000111110000000)
+#define SKIN_SERVICE_NONE        (0b00000000000000000000000000000000)
+#define SKIN_SERVICE_LAW         (0b00000000000000000000001110000000)
+#define SKIN_SERVICE_POLICE      (0b00000000000000000000000010000000)
+#define SKIN_SERVICE_MIB         (0b00000000000000000000000100000000)
+#define SKIN_SERVICE_SHERIFF     (0b00000000000000000000000110000000)
+#define SKIN_SERVICE_SWAT        (0b00000000000000000000001000000000)
+#define SKIN_SERVICE_FBI         (0b00000000000000000000001010000000)
+#define SKIN_SERVICE_ARMY        (0b00000000000000000000001110000000)
+#define SKIN_SERVICE_FIRE        (0b00000000000000000000010000000000)
+#define SKIN_SERVICE_MEDIC       (0b00000000000000000000100000000000)
 
-#define SKIN_FLAG_TYPE          (0b00000000000000001111111111111000)
-#define SKIN_TYPE_OTHER         (0b00000000000000000000000000000000)
-#define SKIN_TYPE_BEACH         (0b00000000000000000001000000000000)
-#define SKIN_TYPE_FARMER        (0b00000000000000000010000000000000)
-#define SKIN_TYPE_WHORE         (0b00000000000000000011000000000000)
-#define SKIN_TYPE_SPORT         (0b00000000000000000100000000000000)
-#define SKIN_TYPE_HOMELESS      (0b00000000000000000101000000000000)
-#define SKIN_TYPE_DEALER        (0b00000000000000000110000000000000)
-#define SKIN_TYPE_FOOD          (0b00000000000000000111000000000000)
-#define SKIN_TYPE_SECURITY      (0b00000000000000001000000000000000)
-#define SKIN_TYPE_CONSTRUCTION  (0b00000000000000001001000000000000)
+#define SKIN_FLAG_TYPE           (0b00000000000000001111111111111000)
+#define SKIN_TYPE_OTHER          (0b00000000000000000000000000000000)
+#define SKIN_TYPE_BEACH          (0b00000000000000000001000000000000)
+#define SKIN_TYPE_FARMER         (0b00000000000000000010000000000000)
+#define SKIN_TYPE_WHORE          (0b00000000000000000011000000000000)
+#define SKIN_TYPE_SPORT          (0b00000000000000000100000000000000)
+#define SKIN_TYPE_HOMELESS       (0b00000000000000000101000000000000)
+#define SKIN_TYPE_DEALER         (0b00000000000000000110000000000000)
+#define SKIN_TYPE_FOOD           (0b00000000000000000111000000000000)
+#define SKIN_TYPE_SECURITY       (0b00000000000000001000000000000000)
+#define SKIN_TYPE_CONSTRUCTION   (0b00000000000000001001000000000000)
 
-#define SKIN_TYPE_LAW           (SKIN_SERVICE_LAW)
-#define SKIN_TYPE_MEDIC         (SKIN_SERVICE_MEDIC)
-#define SKIN_TYPE_FIRE          (SKIN_SERVICE_FIRE)
-#define SKIN_TYPE_GANG          (SKIN_FLAG_GANG)
-
-static const s_GangNames[][18 char] = {
-    !"Grove Street",         // SKIN_GANG_GROVE
-    !"Ballas",               // SKIN_GANG_BALLA
-    !"Los Aztecas",          // SKIN_GANG_AZTECA
-    !"Los Santos Vagos",     // SKIN_GANG_VAGO
-    !"Da Nang Boys",         // SKIN_GANG_DANANG
-    !"San Fierro Rifa",      // SKIN_GANG_RIFA
-    !"Triads",               // SKIN_GANG_TRIAD
-    !"Bikers",               // SKIN_GANG_BIKER
-    !"The Russian Mafia",    // SKIN_GANG_RUSSIAN
-    !"The Italian Mafia"     // SKIN_GANG_ITALIAN
-};
-
-static const s_ServiceNames[][13 char] = {
-    !"Policeman",            // SKIN_SERVICE_POLICE
-    !"M.I.B.",               // SKIN_SERVICE_MIB
-    !"Sheriff",              // SKIN_SERVICE_SHERIFF
-    !"S.W.A.T.",             // SKIN_SERVICE_SWAT
-    !"F.B.I. agent",         // SKIN_SERVICE_FBI
-    !"Army",                 // SKIN_SERVICE_ARMY
-    !"Fireman",              // SKIN_SERVICE_FIRE
-    !"Paramedic"             // SKIN_SERVICE_MEDIC
-};
-
-static const s_AnimGroupNames[][14 char] = {
-    !"Busy Woman",           // SKIN_ANIM_BUSY_WOMAN   
-    !"Fat Man",              // SKIN_ANIM_FAT_MAN      
-    !"Gang",                 // SKIN_ANIM_GANG         
-    !"Jogger",               // SKIN_ANIM_JOGGER       
-    !"Jogger",               // SKIN_ANIM_JOG_WOMAN    
-    !"Man",                  // SKIN_ANIM_MAN          
-    !"Old Fat Woman",        // SKIN_ANIM_OLD_FAT_WOMAN
-    !"Old Man",              // SKIN_ANIM_OLD_MAN      
-    !"Old Woman",            // SKIN_ANIM_OLD_WOMAN    
-    !"Player",               // SKIN_ANIM_PLAYER       
-    !"Prostitute",           // SKIN_ANIM_PROSTITUTE   
-    !"Sexy Woman",           // SKIN_ANIM_SEXY_WOMAN   
-    !"Skater",               // SKIN_ANIM_SKATER       
-    !"S.W.A.T.",             // SKIN_ANIM_SWAT         
-    !"Woman"                 // SKIN_ANIM_WOMAN        
-};
+#define SKIN_TYPE_LAW            (SKIN_SERVICE_LAW)
+#define SKIN_TYPE_MEDIC          (SKIN_SERVICE_MEDIC)
+#define SKIN_TYPE_FIRE           (SKIN_SERVICE_FIRE)
+#define SKIN_TYPE_GANG           (SKIN_FLAG_GANG)
 
 #define SKIN_GROUP_PLAYER        ( 0)
 #define SKIN_GROUP_COP           ( 1)
@@ -265,47 +222,89 @@ static const s_AnimGroupNames[][14 char] = {
 #define SKIN_GROUP_PROSTITUTE    (20)
 #define SKIN_GROUP_CRIMINAL      (21)
 #define SKIN_GROUP_BUSKER        (22)
-#define SKIN_GROUP_TAXIDRIVER    (23)
+#define SKIN_GROUP_TAXI_DRIVER   (23)
 #define SKIN_GROUP_PSYCHO        (24)
 #define SKIN_GROUP_STEWARD       (25)
-#define SKIN_GROUP_SPORTSFAN     (26)
+#define SKIN_GROUP_SPORTS_FAN    (26)
 #define SKIN_GROUP_SHOPPER       (27)
-#define SKIN_GROUP_OLDSHOPPER    (28)
+#define SKIN_GROUP_OLD_SHOPPER   (28)
 #define SKIN_GROUP_BEACH_GUY     (29)
 #define SKIN_GROUP_BEACH_GIRL    (30)
 #define SKIN_GROUP_SKATER        (31)
 #define SKIN_GROUP_MISSION       (32)
 #define SKIN_GROUP_COWARD        (33)
 
-#define SKIN_FOF_WEAK           (1)
-#define SKIN_FOF_NORMAL         (2)
-#define SKIN_FOF_TOUGH          (3)
+#define SKIN_FOF_WEAK            (1)
+#define SKIN_FOF_NORMAL          (2)
+#define SKIN_FOF_TOUGH           (3)
 
-#define SKIN_ANIM_BUSY_WOMAN    ( 0)
-#define SKIN_ANIM_FAT_MAN       ( 1)
-#define SKIN_ANIM_GANG          ( 2)
-#define SKIN_ANIM_JOGGER        ( 3)
-#define SKIN_ANIM_JOG_WOMAN     ( 4)
-#define SKIN_ANIM_MAN           ( 5)
-#define SKIN_ANIM_OLD_FAT_WOMAN ( 6)
-#define SKIN_ANIM_OLD_MAN       ( 7)
-#define SKIN_ANIM_OLD_WOMAN     ( 8)
-#define SKIN_ANIM_PLAYER        ( 9)
-#define SKIN_ANIM_PROSTITUTE    (10)
-#define SKIN_ANIM_SEXY_WOMAN    (11)
-#define SKIN_ANIM_SKATER        (12)
-#define SKIN_ANIM_SWAT          (13)
-#define SKIN_ANIM_WOMAN         (14)
+#define SKIN_ANIM_BUSY_WOMAN     ( 0)
+#define SKIN_ANIM_FAT_MAN        ( 1)
+#define SKIN_ANIM_GANG           ( 2)
+#define SKIN_ANIM_JOGGER         ( 3)
+#define SKIN_ANIM_JOG_WOMAN      ( 4)
+#define SKIN_ANIM_MAN            ( 5)
+#define SKIN_ANIM_OLD_FAT_WOMAN  ( 6)
+#define SKIN_ANIM_OLD_MAN        ( 7)
+#define SKIN_ANIM_OLD_WOMAN      ( 8)
+#define SKIN_ANIM_PLAYER         ( 9)
+#define SKIN_ANIM_PROSTITUTE     (10)
+#define SKIN_ANIM_SEXY_WOMAN     (11)
+#define SKIN_ANIM_SKATER         (12)
+#define SKIN_ANIM_SWAT           (13)
+#define SKIN_ANIM_WOMAN          (14)
+
+static const s_GangNames[][18 char] = {
+    !"Grove Street",             // SKIN_GANG_GROVE
+    !"Ballas",                   // SKIN_GANG_BALLA
+    !"Los Aztecas",              // SKIN_GANG_AZTECA
+    !"Los Santos Vagos",         // SKIN_GANG_VAGO
+    !"Da Nang Boys",             // SKIN_GANG_DANANG
+    !"San Fierro Rifa",          // SKIN_GANG_RIFA
+    !"Triads",                   // SKIN_GANG_TRIAD
+    !"Bikers",                   // SKIN_GANG_BIKER
+    !"The Russian Mafia",        // SKIN_GANG_RUSSIAN
+    !"The Italian Mafia"         // SKIN_GANG_ITALIAN
+};
+
+static const s_ServiceNames[][13 char] = {
+    !"Policeman",                // SKIN_SERVICE_POLICE
+    !"M.I.B.",                   // SKIN_SERVICE_MIB
+    !"Sheriff",                  // SKIN_SERVICE_SHERIFF
+    !"S.W.A.T.",                 // SKIN_SERVICE_SWAT
+    !"F.B.I. agent",             // SKIN_SERVICE_FBI
+    !"Army",                     // SKIN_SERVICE_ARMY
+    !"Fireman",                  // SKIN_SERVICE_FIRE
+    !"Paramedic"                 // SKIN_SERVICE_MEDIC
+};
+
+static const s_AnimGroupNames[][14 char] = {
+    !"Busy Woman",               // SKIN_ANIM_BUSY_WOMAN   
+    !"Fat Man",                  // SKIN_ANIM_FAT_MAN      
+    !"Gang",                     // SKIN_ANIM_GANG         
+    !"Jogger",                   // SKIN_ANIM_JOGGER       
+    !"Jogger",                   // SKIN_ANIM_JOG_WOMAN    
+    !"Man",                      // SKIN_ANIM_MAN          
+    !"Old Fat Woman",            // SKIN_ANIM_OLD_FAT_WOMAN
+    !"Old Man",                  // SKIN_ANIM_OLD_MAN      
+    !"Old Woman",                // SKIN_ANIM_OLD_WOMAN    
+    !"Player",                   // SKIN_ANIM_PLAYER       
+    !"Prostitute",               // SKIN_ANIM_PROSTITUTE   
+    !"Sexy Woman",               // SKIN_ANIM_SEXY_WOMAN   
+    !"Skater",                   // SKIN_ANIM_SKATER       
+    !"S.W.A.T.",                 // SKIN_ANIM_SWAT         
+    !"Woman"                     // SKIN_ANIM_WOMAN        
+};
 
 enum e_PEDGRP_INFO {
     e_GRP_NAME[14 char],
-    e_FEAR,              //Fear                     (0-100) 100 = Scared of everything
-    e_TEMPER,            //Temper                   (0-100) 100 = Bad Tempered
-    e_LAWFUL,            //Lawfullness              (0-100) 100 = Boy Scout
-    e_APPEAL,            //Sexiness                 (0-100)
-    Float:e_STRENGTH,    //Attack strength          (float multiplier to attack damages)
-    Float:e_DEFENCE,     //Defend weakness          (float multiplier to received damages)
-    e_FOF                //Default Decision Maker   (FOF = Fight or Flight) (0: group member, 1:cop, 2:rand_norm 3:rand_tough 4:rand_weak)
+    e_FEAR,                      //Fear                     (0-100) 100 = Scared of everything
+    e_TEMPER,                    //Temper                   (0-100) 100 = Bad Tempered
+    e_LAWFUL,                    //Lawfullness              (0-100) 100 = Boy Scout
+    e_APPEAL,                    //Sexiness                 (0-100)
+    Float:e_STRENGTH,            //Attack strength          (float multiplier to attack damages)
+    Float:e_DEFENCE,             //Defend weakness          (float multiplier to received damages)
+    e_FOF                        //Default Decision Maker   (FOF = Fight or Flight) (0: group member, 1:cop, 2:rand_norm 3:rand_tough 4:rand_weak)
 }
 static const pedGroups[][e_PEDGRP_INFO] = {
     {!"Player"       , 50 , 50 , 50 , 50 , 3.0, 0.4, SKIN_FOF_NORMAL},
