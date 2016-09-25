@@ -110,7 +110,7 @@
 |     - SKIN_GROUP_PROSTITUTE                                             |
 |     - SKIN_GROUP_CRIMINAL                                               |
 |     - SKIN_GROUP_BUSKER                                                 |
-|     - SKIN_GROUP_TAXIDRIVER                                             |
+|     - SKIN_GROUP_TAXI_DRIVER                                             |
 |     - SKIN_GROUP_PSYCHO                                                 |
 |     - SKIN_GROUP_STEWARD                                                |
 |     - SKIN_GROUP_SPORTSFAN                                              |
@@ -351,7 +351,7 @@ enum e_SKIN_INFO {
     e_SKIN_FLAGS
 }
 static const skinInfoList[][e_SKIN_INFO] = {
-    {!"cj"     , !"Carl \"CJ\" Johnson (Main Character)"               , SKIN_GROUP_PLAYER      , SKIN_ANIM_PLAYER       , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
+    {!"cj"     , !"Carl \"CJ\" Johnson (Main Character)"               , SKIN_GROUP_PLAYER      , SKIN_ANIM_PLAYER       , SKIN_GENDER_MALE   | SKIN_RACE_BLACK},
     {!"truth"  , !"The Truth"                                          , SKIN_GROUP_MISSION     , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
     {!"maccer" , !"Maccer"                                             , SKIN_GROUP_MISSION     , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
     {!"andre"  , !"Andre"                                              , SKIN_GROUP_MISSION     , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
@@ -533,7 +533,7 @@ static const skinInfoList[][e_SKIN_INFO] = {
     {!"wmyammo", !"Ammunation Salesman"                                , SKIN_GROUP_TOUGH_GUY   , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
     {!"bmytatt", !"Tattoo Artist"                                      , SKIN_GROUP_TOUGH_GUY   , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_BLACK},
     {!"vwmycr" , !"Punk"                                               , SKIN_GROUP_CRIMINAL    , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
-    {!"vbmocd" , !"Cab Driver"                                         , SKIN_GROUP_TAXIDRIVER  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_BLACK},
+    {!"vbmocd" , !"Cab Driver"                                         , SKIN_GROUP_TAXI_DRIVER  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_BLACK},
     {!"vbmycr" , !"Normal Ped"                                         , SKIN_GROUP_CRIMINAL    , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_BLACK},
     {!"vhmycr" , !"Normal Ped"                                         , SKIN_GROUP_CRIMINAL    , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_LATIN},
     {!"sbmyri" , !"Normal Ped"                                         , SKIN_GROUP_STREET_GUY  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_BLACK},
@@ -557,7 +557,7 @@ static const skinInfoList[][e_SKIN_INFO] = {
     {!"omykara", !"Karate Teacher"                                     , SKIN_GROUP_TOUGH_GUY   , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
     {!"wmykara", !"Karate Teacher"                                     , SKIN_GROUP_TOUGH_GUY   , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
     {!"wfyburg", !"Burger Shot Cashier"                                , SKIN_GROUP_STREET_GIRL , SKIN_ANIM_WOMAN        , SKIN_GENDER_FEMALE | SKIN_RACE_WHITE | SKIN_TYPE_FOOD},
-    {!"vwmycd" , !"Cab Driver"                                         , SKIN_GROUP_TAXIDRIVER  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
+    {!"vwmycd" , !"Cab Driver"                                         , SKIN_GROUP_TAXI_DRIVER  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
     {!"vhfypro", !"Prostitute"                                         , SKIN_GROUP_PROSTITUTE  , SKIN_ANIM_PROSTITUTE   , SKIN_GENDER_FEMALE | SKIN_RACE_WHITE | SKIN_TYPE_WHORE},
     {!"suzie"  , !"Su Xi Mu (Suzie)"                                   , SKIN_GROUP_MISSION     , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_ASIAN},
     {!"omonood", !"Oriental Noodle stand vendor"                       , SKIN_GROUP_OLD_GUY     , SKIN_ANIM_OLD_MAN      , SKIN_GENDER_MALE   | SKIN_RACE_WHITE | SKIN_TYPE_FOOD},
@@ -571,7 +571,7 @@ static const skinInfoList[][e_SKIN_INFO] = {
     {!"wmyclot", !"Clothes shop staff"                                 , SKIN_GROUP_STREET_GUY  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE | SKIN_TYPE_SECURITY},
     {!"sbfost" , !"Normal Ped"                                         , SKIN_GROUP_STREET_GIRL , SKIN_ANIM_WOMAN        , SKIN_GENDER_FEMALE | SKIN_RACE_BLACK},
     {!"sbfyri" , !"Rich Woman"                                         , SKIN_GROUP_COWARD      , SKIN_ANIM_WOMAN        , SKIN_GENDER_FEMALE | SKIN_RACE_BLACK},
-    {!"sbmocd" , !"Cab Driver"                                         , SKIN_GROUP_TAXIDRIVER  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_BLACK},
+    {!"sbmocd" , !"Cab Driver"                                         , SKIN_GROUP_TAXI_DRIVER  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_BLACK},
     {!"sbmori" , !"Normal Ped"                                         , SKIN_GROUP_SUIT_GUY    , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_BLACK},
     {!"sbmost" , !"Normal Ped"                                         , SKIN_GROUP_STREET_GUY  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_BLACK},
     {!"shmycr" , !"Normal Ped"                                         , SKIN_GROUP_CRIMINAL    , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_LATIN},
@@ -585,7 +585,7 @@ static const skinInfoList[][e_SKIN_INFO] = {
     {!"swfori" , !"Normal Ped"                                         , SKIN_GROUP_COWARD      , SKIN_ANIM_WOMAN        , SKIN_GENDER_FEMALE | SKIN_RACE_WHITE},
     {!"swfost" , !"Normal Ped"                                         , SKIN_GROUP_STREET_GIRL , SKIN_ANIM_WOMAN        , SKIN_GENDER_FEMALE | SKIN_RACE_WHITE},
     {!"swfyst" , !"Normal Ped"                                         , SKIN_GROUP_STREET_GIRL , SKIN_ANIM_WOMAN        , SKIN_GENDER_FEMALE | SKIN_RACE_WHITE},
-    {!"swmocd" , !"Cab Driver"                                         , SKIN_GROUP_TAXIDRIVER  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
+    {!"swmocd" , !"Cab Driver"                                         , SKIN_GROUP_TAXI_DRIVER  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
     {!"swmori" , !"Normal Ped"                                         , SKIN_GROUP_SUIT_GUY    , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
     {!"swmost" , !"Normal Ped"                                         , SKIN_GROUP_STREET_GUY  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
     {!"shfypro", !"Prostitute"                                         , SKIN_GROUP_PROSTITUTE  , SKIN_ANIM_PROSTITUTE   , SKIN_GENDER_FEMALE | SKIN_RACE_WHITE | SKIN_TYPE_WHORE},
@@ -612,8 +612,8 @@ static const skinInfoList[][e_SKIN_INFO] = {
     {!"heck1"  , !"Heckler"                                            , SKIN_GROUP_TOUGH_GUY   , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE | SKIN_TYPE_SPORT},
     {!"heck2"  , !"Heckler"                                            , SKIN_GROUP_TOUGH_GUY   , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE | SKIN_TYPE_SPORT},
     {!"bmycon" , !"Construction Worker"                                , SKIN_GROUP_TOUGH_GUY   , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_BLACK | SKIN_TYPE_CONSTRUCTION},
-    {!"wmycd1" , !"Cab driver"                                         , SKIN_GROUP_TAXIDRIVER  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
-    {!"bmocd"  , !"Cab driver"                                         , SKIN_GROUP_TAXIDRIVER  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_BLACK},
+    {!"wmycd1" , !"Cab driver"                                         , SKIN_GROUP_TAXI_DRIVER  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
+    {!"bmocd"  , !"Cab driver"                                         , SKIN_GROUP_TAXI_DRIVER  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_BLACK},
     {!"vwfywa2", !"Normal Ped"                                         , SKIN_GROUP_STREET_GIRL , SKIN_ANIM_WOMAN        , SKIN_GENDER_FEMALE | SKIN_RACE_ASIAN},
     {!"wmoice" , !"Clown (Ice-cream Van Driver)"                       , SKIN_GROUP_STREET_GUY  , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
     {!"tenpen" , !"Officer Frank Tenpenny (Corrupt Cop)"               , SKIN_GROUP_COP         , SKIN_ANIM_SWAT         , SKIN_GENDER_MALE   | SKIN_RACE_BLACK},
