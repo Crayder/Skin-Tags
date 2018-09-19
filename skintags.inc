@@ -389,7 +389,7 @@ static const skinInfoList[][e_SKIN_INFO] = {
     {!"hmogar" , !"Gardener"                                           , SKIN_GROUP_OLD_GUY     , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_LATIN},
     {!"wmygol1", !"Golfer"                                             , SKIN_GROUP_COWARD      , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_LATIN | SKIN_TYPE_SPORT},
     {!"wmygol2", !"Golfer"                                             , SKIN_GROUP_COWARD      , SKIN_ANIM_MAN          , SKIN_GENDER_MALE   | SKIN_RACE_WHITE | SKIN_TYPE_SPORT},
-    {!"hfori"  , !"Normal Ped"                                         , SKIN_GROUP_COWARD      , SKIN_ANIM_WOMAN        , SKIN_GENDER_MALE   | SKIN_RACE_WHITE},
+    {!"hfori"  , !"Normal Ped"                                         , SKIN_GROUP_COWARD      , SKIN_ANIM_WOMAN        , SKIN_GENDER_FEMALE   | SKIN_RACE_WHITE},
     {!"hfost"  , !"Normal Ped"                                         , SKIN_GROUP_OLD_GIRL    , SKIN_ANIM_OLD_FAT_WOMAN, SKIN_GENDER_FEMALE | SKIN_RACE_WHITE},
     {!"hfyri"  , !"Normal Ped"                                         , SKIN_GROUP_COWARD      , SKIN_ANIM_SEXY_WOMAN   , SKIN_GENDER_FEMALE | SKIN_RACE_BLACK},
     {!"hfyst"  , !"Normal Ped"                                         , SKIN_GROUP_STREET_GIRL , SKIN_ANIM_WOMAN        , SKIN_GENDER_FEMALE | SKIN_RACE_LATIN},
