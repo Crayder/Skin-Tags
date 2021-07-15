@@ -717,7 +717,7 @@ stock GetSkinRaceName(skinid, output[], outlen = sizeof(output)) {
         return 0;
     
     output[0] = '\0';
-    switch(GetSkinRace(skinid) >> 1) {
+    switch(GetSkinRace(skinid)) {
         case SKIN_RACE_WHITE:
             strcat(output, "caucasian", outlen);
         case SKIN_RACE_BLACK:
